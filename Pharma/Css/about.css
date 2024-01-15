@@ -1,0 +1,117 @@
+.abt-banner{
+    display: flex;
+    align-items: center;
+    height: 350px;
+    background-image: url('../Images/dumbbells-shelf-workout-gym-copy-space-blurred-gym-background-preparation-gym-exercises-workout-gym-161393354.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.page-guide{
+    /* padding:120px 0; */
+    width: 50vw;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.777);
+}
+.page-guide h2, .page-guide p{
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+}
+.page-guide h2{
+    font-family:sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+}
+.page-guide p span{
+    color: #ff8000;
+    font-weight: bolder;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+.icon--next:before {
+    content: ' \3E  ';
+}
+/*  */
+.abt-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: black;
+    align-items: flex-start;
+}
+.left{
+    min-width: 300px;
+    max-width: 550px;
+}
+.left img{
+    width: 100%;
+}
+.right{
+    padding: 12px 15px;
+    max-width: 800px;
+    min-width:270px;
+}
+.right h2{
+    margin: 0%;
+    margin-bottom: 1em;
+    font-family:sans-serif;
+    font-size: 40px;
+    color: #ea6d00;
+    font-weight: 900;
+}
+.right .heading{
+    margin: 0;
+    color: black;
+    font-size: 2em;
+}
+
+/*  */
+.last{
+    height: 400px;
+    width: calc(100%-20px);
+    background-image: url('../Images/Lab-1024x512.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+.abt-cmp{
+    width: 70%;
+    /* height: 90%; */
+    margin-top: -20rem;
+    
+    background-color: rgb(0, 0, 0,0.9);
+}
+.abt-cmp p{
+    color: white !important;
+    padding:25px 16px ;
+}
+
+.aside{
+    margin: 20px auto;
+    padding: 12px 15px;
+}
+@media only screen and (max-width: 768px){
+    .abt-cmp{
+        width: 100%;
+    }
+    .page-guide{
+        /* padding-top:10px; */
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        line-height: 0.1;
+        width: 90%;
+        height: 100%;
+    }
+}
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    word-spacing: 1px;
+    line-height: 1.5em;
+    color: rgb(117, 117, 117);
+}
+/* .abt-cmp p{
+    color: white;
+} */

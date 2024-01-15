@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/fontawesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./Css/pharma.css">
+<!-- internal CSS for this page -->
+    <style>
+        .forms{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .signup,
+        .login {
+            /* border: 1px solid gray; */
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        #signupForm,
+        #loginForm {
+            border: 1px solid;
+            padding: 20px;
+            text-align: left;
+        }
+        /* #signupForm{
+            display: none;
+        } */
+        #switch{
+            border: none;
+            margin: 8px auto;
+            background: none;
+            color: blue;
+            font-weight:700;
+            cursor: pointer;
+        }
+
+        /* Additional CSS for form styling */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top-corner">
+            <div class="top- add"><i class="fa fa-location-dot"></i>Norcross, GA 30071</div>
+            <div class="top- tel"><i class="fa fa-phone"></i>Tel: 888-855-7919</div>
+            <div class="top- mail"><i class="fa fa-envelope"></i>Email Us: <a
+                        href="mailto:">info@hitechpharma.com</a></div>
+        </div>
+        <div class="logo">
+            <pre>Hi-Tech&nbsp;<i class="fa fa-solid fa-plus"></i>
+<span>Pharma</span></p></div>
+    </header>
+    <section class="forms">
+        <h4>Conect with Us</h4>
+        <div class="login">
+            <form id="loginForm" onsubmit="return validateForm()">
+                Name: <input type="text" id="nome"><span class="error-message" id="nomeError"></span><br><br>
+                Password: <input type="password" id="password"><span class="error-message" id="passwordError"></span><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="signup">
+            <form id="signupForm" onsubmit="return validateSignupForm()">
+                Email: <input type="email" id="email"><span class="error-message" id="emailError"></span><br><br>
+                Password: <input type="password" id="signupPassword" minlength="4" maxlength="8"><span class="error-message" id="signupPasswordError"></span><br><br>
+                Confirm Password: <input type="password" id="confirmPassword"><span class="error-message" id="confirmPasswordError"></span><br><br>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+        <span class="label">Don't have account:</span><button id="switch">click here</button>
+    </section>
+   
+   <footer>
+    <div class="foot b-first"> <div class="logo"><pre>Hi-Tech &nbsp;<i class="fa fa-solid fa-plus"></i>
+<span>Pharma</span></p></div>
+    <p>We are an enormously successful
+        company that creates, manufactures
+        and sells high-quality herbal products
+        sold by the large, major retailers across
+        the United States.</p>
+        <div class="social"><a href="#"> <i class="fa-brands fa-facebook"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></div>
+    </div>
+    <div class="foot">
+        <h2>INFORMATION</h2>
+        <div class="bottom"><i class="fa fa-location-dot"></i>6015 B Unity Drive Norcross, GA 30071</div>
+        <div class="bottom "><i class="fa fa-phone"></i>Tel: 888-855-7919</div>
+        <div class="bottom "><i class="fa fa-envelope"></i>Email Us: <a href="mailto:" id="mail">info@hitechpharma.com</a></div>
+    </div>
+    <div class="foot third"><h2>USEFUL LINKS</h2>
+        <ul><li><a href="./pharma.html">Home</a></li>
+        <li><a href="./about.html">About Hi-Tech Pharma</a></li>
+        <!-- <li><a href="http://www.facebook.com/Hitechpharma"></a> -->
+        <li><a href="./contactus.html">Contact us</a></li></ul></div>
+    <div class="foot four"><h2>SUBSCRIBE</h2>
+    <p>Enter your email address for our mailing
+        list to keep yourself updated.</p>
+    <input type="text"><button><i class="fab fa-telegram-plane"></i></button></div>
+</footer>
+<script>
+    function validateForm() {
+        var name = document.getElementById('nome').value;
+        var password = document.getElementById('password').value;
+        var nomeError = document.getElementById('nomeError');
+        var passwordError = document.getElementById('passwordError');
+        var isValid = true;
+    
+        // Validation logic
+        if (name.trim() === '') {
+            nomeError.innerText = 'Name is required';
+            isValid = false;
+        } else {
+            nomeError.innerText ='';
+        }
+    
+        if (password.trim() === '') {
+            passwordError.innerText = 'Password is required';
+            isValid = false;
+        } else {
+            passwordError.innerText = '';
+        }
+        if (name.trim() === 'Saket' && password === 'Gupta') {
+        alert('Login successful');
+        }
+        return isValid;//window.location.href='pharma.html';
+    }
+    
+    // validating signup form
+            function validateSignupForm() {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('signupPassword').value;
+                var confirmPassword = document.getElementById('confirmPassword').value;
+                var emailError = document.getElementById('emailError');
+                var passwordError = document.getElementById('signupPasswordError');
+                var confirmPasswordError = document.getElementById('confirmPasswordError');
+                var isValid = true;
+                if (email.trim() === '') {
+                    emailError.innerText = 'Email is required';
+                    isValid = false;
+                } else {
+                    emailError.innerText = '';
+                }
+    
+                if (password.trim() === '') {
+                    passwordError.innerText = 'Password is required';
+                    isValid = false;
+                } else {
+                    passwordError.innerText = '';
+                }
+                if (confirmPassword.trim() === '') {
+                    confirmPasswordError.innerText = 'Please confirm your password';
+                    isValid = false;
+                } else if (confirmPassword !== password) {
+                    confirmPasswordError.innerText = 'Passwords do not match';
+                    isValid = false;
+                } else {
+                    confirmPasswordError.innerText = '';
+                }
+    
+                return isValid;
+            }
+        
+    </script>
+<script>
+    // jquery for swtiching forms
+    $(document).ready(function () {
+        $('.signup').hide();
+    $('#switch').on('click', function () {
+        $('.signup, .login').toggle(
+            $('.label').innerText="alredy have acoount:"
+        );
+    });
+
+$('#switch').click(function(){
+    $('.label').text(function(_,oldtext){
+        return oldtext==="Don't have account:"?"Already have account?":"Don't have account:"
+    });
+});
+});
+
+
+// using local storage to sign in
+
+    // $(document).ready(function () {
+    //     // Retrieve values from local storage
+    //     var storedNome = localStorage.getItem('nome');
+    //     var storedPassword = localStorage.getItem('password');
+    //     $('#loginForm').submit(function (e) {
+    //         e.preventDefault();
+    //         var nome = $('#nome').val();
+    //         var password = $('#password').val();
+
+    //         // Store values in local storage
+    //         localStorage.setItem('nome', nome);
+    //         localStorage.setItem('password', password);
+
+    //         if (nome === storedNome && password === storedPassword) {
+    //             window.location.href = 'pharma.html'; // Redirect to pharma.html if matched
+    //         } else {
+    //             if (nome != storedNome) {
+    //                 $('#nomeError').text('user not found').show();
+    //             } else {
+    //                 $('#nomeError').hide();
+    //             }
+
+    //             if (password != storedPassword) {
+    //                 $('#passwordError').text("password didn't match ").show();
+    //             } else {
+    //                 $('#passwordError').hide();
+    //             }
+    //         }
+    //     });
+
+    //     $('#nome, #password').on('input', function () {
+    //         $(this).next('.error-message').hide();
+    //     });
+    // });
+</script>
+</body>
+</html>    
