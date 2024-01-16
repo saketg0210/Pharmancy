@@ -129,14 +129,14 @@
         var isValid = true;
     
         // Validation logic
-        if (name.trim() === '') {
-            nomeError.innerText = 'Name is required';
+        if (name.trim() === ''||name.trim()!='Saket') {
+            nomeError.innerText = 'Name is required or invalid username';
             isValid = false;
         } else {
             nomeError.innerText ='';
         }
     
-        if (password.trim() === '') {
+        if (password.trim() === ''||password.trim()!='Gupta') {
             passwordError.innerText = 'Password is required';
             isValid = false;
         } else {
@@ -189,9 +189,7 @@
     $(document).ready(function () {
         $('.signup').hide();
     $('#switch').on('click', function () {
-        $('.signup, .login').toggle(
-            $('.label').innerText="alredy have acoount:"
-        );
+        $('.signup, .login').toggle(3000,'swing');
     });
 
 $('#switch').click(function(){
